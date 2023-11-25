@@ -1,0 +1,156 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom, #28a745 50%, #218838 50%);
+}
+
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #28a745 50%, #218838 50%);
+  animation: backgroundAnimation 5s ease-in-out forwards;
+  z-index: -1;
+  opacity: 0;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 0%;
+    opacity: 1;
+  }
+
+  100% {
+    background-position: 100% 100%;
+    opacity: 1;
+  }
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  z-index: 9999;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.card {
+  max-width: 600px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: scale(0.9);
+  opacity: 0;
+  animation: scaleAndFade 0.5s forwards;
+  margin: 0 auto;
+}
+
+.card-header {
+  background-color: #218838;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+}
+
+.icon-check {
+  font-size: 100px;
+  color: #ffffff;
+}
+
+.card-body {
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.card-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #218838;
+}
+
+.card-text {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  color: #555555;
+}
+
+.btn-full-width {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #218838;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-full-width:hover {
+  background-color: #1e7e34;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 400px;
+  }
+
+  .icon-check {
+    font-size: 80px;
+  }
+
+  .card-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .card-text {
+    font-size: 16px;
+  }
+}
+
+@keyframes scaleAndFade {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
